@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "name":"Chicken",
+        "details":"Food is one of the basic necessities of life. Food contains nutrients—substances essential for the growth." ,
+        "price": 200,
+        "image":"https://media.istockphoto.com/id/835903320/photo/baked-chicken-wings-with-sesame-seeds-and-sweet-chili-sauce-on-white-wooden-board.jpg?s=612x612&w=0&k=20&c=SH8ZCkEKuWD_wxulpntIJ0uD4yRnUf9UXovQwSwrmmA="
+
+    },
+    {
+        "id":2,
+        "name":"Biriyani",
+        "details":"Food is one of the basic necessities of life. Food contains nutrients—substances essential for the growth" ,
+        "price": 200,
+        "image":"https://media.istockphoto.com/id/1407172002/photo/indian-spicy-mutton-biryani-with-raita-and-gulab-jamun-served-in-a-dish-side-view-on-grey.jpg?s=612x612&w=0&k=20&c=sYldtF2E_cSuYioPtcmM15arsnSs2mIgpuAKUDuuGoI="
+
+    },
+    {
+        "id":3,
+        "name":"Burger",
+        "details":"Food is one of the basic necessities of life. Food contains nutrients—substances essential for the growth" ,
+        "price": 150,
+        "image":"https://media.istockphoto.com/id/539243164/photo/crispy-chicken-burger.jpg?s=612x612&w=0&k=20&c=rKASkwLpNnhEU7gyCAlHw8wrPnK-mpN_xuypwiGzVsQ="
+
+    }
+ ]
+

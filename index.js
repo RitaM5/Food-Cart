@@ -27,17 +27,19 @@ const addDataToHTML = () => {
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item');
             newProduct.innerHTML =
-                `<img class="h-50 w-" src="${product.image}" alt="">       
+                `<img class="h-50" src="${product.image}" alt="">       
                 <h2 class="mt-4">${product.name}</h2>
                 <div class="price">$${product.price}</div>
                 <p>${product.details}</p>
                 <button class="addCart">Add To Cart</button>`;
             listProductHTML.appendChild(newProduct);
             let addButton = newProduct.querySelector('.addCart');
-            addButton.addEventListener('click', () => {
+            addButton.addEventListener('click', (event) => {
+                event.stopPropagation();
                 addToCart(product.id);
                 addButton.disabled = true; // Disable the button after it's clicked
             });
+         
         });
     }
 }
@@ -55,7 +57,8 @@ const addToCart = (product_id) => {
             product_id: product_id,
             quantity: 1
         }];
-    } else if (positionThisProductInCart < 0) {
+    } 
+    else if (positionThisProductInCart < 0) {
         cart.push({
             product_id: product_id,
             quantity: 1
@@ -63,14 +66,18 @@ const addToCart = (product_id) => {
     } else {
         cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
     }
-    addCartToHTML();
+    
+  
     addCartToMemory();
+    addCartToHTML();
 }
+
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
+    total.innerText ='';
     let totalQuantity = 0;
     let totalPrice = 0;
     if (cart.length > 0) {
@@ -105,6 +112,7 @@ const addCartToHTML = () => {
         total.innerText = totalPrice;
     }
     iconCartSpan.innerText = totalQuantity;
+   
 }
 
 listCartHTML.addEventListener('click', (event) => {
@@ -145,11 +153,13 @@ const changeQuantityCart = (product_id, type) => {
     addCartToMemory();
 }
 const deleteCartItem = (product_id) => {
+    // total.innerText ='';
     let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
     if (positionItemInCart >= 0) {
         cart.splice(positionItemInCart, 1);
         addCartToHTML();
         addCartToMemory();
+       
     }
 };
 
